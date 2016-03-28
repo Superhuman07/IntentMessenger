@@ -16,10 +16,15 @@ public class MainActivity extends Activity {
 
     public void onSendMessage(View view)
     {
-        Intent intent = new Intent(this, Main2Activity.class);
+        /*Intent intent = new Intent(this, Main2Activity.class);
+
+        intent.putExtra("message", value);
+        startActivity(intent);*/
         EditText messageView = (EditText) findViewById(R.id.message);
         String value = messageView.getText().toString();
-        intent.putExtra("message", value);
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, value);
         startActivity(intent);
 
 
