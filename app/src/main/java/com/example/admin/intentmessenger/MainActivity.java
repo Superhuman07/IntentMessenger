@@ -29,7 +29,5 @@ public class MainActivity extends Activity {
         String chooserTitle = getString(R.string.chooser);
         Intent chooseIntent = Intent.createChooser(intent, chooserTitle);
         startActivity(chooseIntent);
-
-
     }
 }
